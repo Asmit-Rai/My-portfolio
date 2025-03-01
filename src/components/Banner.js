@@ -18,7 +18,7 @@ export const Banner = () => {
 
 
   useEffect(() => {
-    const randomBgNumber = Math.floor(Math.random() * 10) + 1;
+    const randomBgNumber = Math.floor(Math.random() * 12) + 1;
     import(`../assets/img/bg${randomBgNumber}.png`)
       .then((image) => setBgImage(image.default))
       .catch((err) => console.error("Image not found", err));
