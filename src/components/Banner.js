@@ -63,17 +63,22 @@ export const Banner = () => {
   };
 
   return (
-    <section
-      className="banner"
-      id="home"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundPosition: "top center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        padding: "260px 0 100px 0",
-      }}
-    >
+    <section className="banner" id="home" style={{ position: "relative", overflow: "hidden" }}>
+     <div
+    style={{
+      backgroundImage: `url(${bgImage})`,
+      backgroundPosition: "top center",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      filter: "blur(3px)",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      zIndex: 0,
+    }}
+  />
       <Container>
         <Row className="aligh-items-center">
           <Col xs={12} md={6} xl={7}>
