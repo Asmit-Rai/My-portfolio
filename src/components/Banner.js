@@ -18,8 +18,7 @@ export const Banner = () => {
 
 
   useEffect(() => {
-    const randomBgNumber = Math.floor(Math.random() * 12) + 1;
-    import(`../assets/img/bg${randomBgNumber}.png`)
+    import(`../assets/img/bg3.png`)
       .then((image) => setBgImage(image.default))
       .catch((err) => console.error("Image not found", err));
   }, []);
@@ -66,11 +65,10 @@ export const Banner = () => {
     <section className="banner" id="home" style={{ position: "relative", overflow: "hidden" }}>
      <div
     style={{
-      backgroundImage: `url(${bgImage})`,
+      backgroundImage: `url(${require('../assets/img/bg3.png')})`,
       backgroundPosition: "top center",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
-      filter: "blur(3px)",
       position: "absolute",
       top: 0,
       left: 0,
