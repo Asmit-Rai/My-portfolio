@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
-import TrackVisibility from "react-on-screen"; 
+import TrackVisibility from "react-on-screen";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -16,13 +15,11 @@ export const Banner = () => {
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
   const period = 2000;
 
-
   useEffect(() => {
     import(`../assets/img/bg3.png`)
       .then((image) => setBgImage(image.default))
       .catch((err) => console.error("Image not found", err));
   }, []);
-
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -62,30 +59,30 @@ export const Banner = () => {
   };
 
   return (
-    <section className="banner" id="home" style={{ position: "relative", overflow: "hidden" }}>
-     <div
-    style={{
-      backgroundImage: `url(${require('../assets/img/bg3.png')})`,
-      backgroundPosition: "top center",
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      zIndex: 0,
-    }}
-  />
+    <section
+      className="banner"
+      id="home"
+      style={{ position: "relative", overflow: "hidden" }}
+    >
+      <div
+        style={{
+          backgroundImage: `url(${require("../assets/img/bg3.png")})`,
+          backgroundPosition: "top center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 0,
+        }}
+      />
       <Container>
         <Row className="aligh-items-center">
           <Col xs={12} md={6} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) => (
                 <div
-                  className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
-                  }
+                  className={"animate__animated animate__fadeIn"}
                 >
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>{`Hey, I'm Asmit Rai`}</h1>
@@ -113,8 +110,6 @@ export const Banner = () => {
                     Let’s Connect <ArrowRightCircle size={25} />
                   </button>
                 </div>
-              )}
-            </TrackVisibility>
           </Col>
         </Row>
       </Container>
